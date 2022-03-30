@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import MeetUps from './MeetUps';
 
 function Home() {
   return (
