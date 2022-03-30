@@ -1,3 +1,3 @@
 class GameSerializer < ActiveModel::Serializer
-  attributes :title, :price, :review, :difficult
+  attributes :title, :price, :review, :difficulty
 end
