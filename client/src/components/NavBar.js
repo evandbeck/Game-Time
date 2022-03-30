@@ -8,6 +8,7 @@ function  NavBar() {
       <Container>
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Brand href="/login">Log In</Navbar.Brand>
+        <Navbar.Brand href="/signup">Sign Up</Navbar.Brand>
       </Container>
 
     </Navbar>

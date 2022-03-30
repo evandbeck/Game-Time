@@ -3,9 +3,9 @@ import React from 'react'
 function MeetUpCard({ description, date, time }) {
   return (
     <div>
-      {description}
-      {date}
-      {time}
+      <p>{description}</p>
+      <h4>{date}</h4>
+      <h5>{time}</h5>
     </div>
   )
 }

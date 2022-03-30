@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { v4 as uuidv4 } from "uuid";
+import React, { useEffect, useState } from 'react';
 import MeetUpCard from './MeetUpCard';
 
 function MeetUps() {
@@ -8,12 +7,12 @@ function MeetUps() {
   useEffect(() => {
     fetch("/meetups")
       .then((resp) => resp.json())
-      .then(setMeetups);
+      .then(meetupsArray => setMeetups(meetupsArray));
   }, []);
 
   const displayMeetups = meetups.map(meetup => {
       return (
-        <MeetUpCard key={uuidv4()} {...meetup}/>
+        <MeetUpCard key={meetup.id} {...meetup}/>
       )
     })
 

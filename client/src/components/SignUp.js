@@ -54,7 +54,6 @@ function SignUp({ user }) {
           <Button type="submit">Sign Up</Button>
         </Form>
       </Col>
-      <Col>Where is this</Col>
     </Container>
   )
 }

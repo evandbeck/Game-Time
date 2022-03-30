@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :platforms
-  resources :meetups
+  resources :meetups, only: [:index]
   resources :games, only: [:index, :show]
   resources :users, only: [:index]
   resources :sessions, only: [:create, :destroy]

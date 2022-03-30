@@ -8,11 +8,10 @@ import SignUp from './SignUp';
 import Games from "./Games";
 import MeetUps from './MeetUps';
 
-
 function App() {
   return (
    <>
-   <Container fluid className="bg-primary fluid">
+   <Container className="bg-secondary">
      <Row>
       <NavBar />
     </Row>
