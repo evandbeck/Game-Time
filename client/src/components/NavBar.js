@@ -1,18 +1,16 @@
 import React from 'react'
-import { Nav } from 'react-bootstrap';
+import { Navbar, Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function  NavBar() {
   return (
-    <Nav className="justify-content-center" variant="tabs" defaultActiveKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/home">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/login">Log In</Nav.Link>
-      </Nav.Item>
+    <Navbar bg="light" sticky="top">
+      <Container>
+        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Navbar.Brand href="/login">Log In</Navbar.Brand>
+      </Container>
 
-    </Nav>
+    </Navbar>
   )
 }
 

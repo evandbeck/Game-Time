@@ -1,8 +1,12 @@
 import React from 'react'
 
-function MeetUpCard() {
+function MeetUpCard({ description, date, time }) {
   return (
-    <div>MeetUpCard</div>
+    <div>
+      {description}
+      {date}
+      {time}
+    </div>
   )
 }
 
