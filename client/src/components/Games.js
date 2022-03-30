@@ -21,7 +21,7 @@ function Games() {
             <Carousel.Item>
                 <GameCard key={game.id} game={game}/>
             </Carousel.Item>
-            
+
         )
     })
 

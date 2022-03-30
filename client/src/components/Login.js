@@ -22,9 +22,6 @@ function Login({ setUser }) {
   }
 
   return (
-<<<<<<< HEAD
-    <div></div>
-=======
     <Container>
       
       <Form onSubmit={handleSubmit}>
@@ -50,7 +47,6 @@ function Login({ setUser }) {
         </Button>
       </Form>
     </Container>
->>>>>>> login
   )
 }
 
