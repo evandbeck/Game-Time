@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from 'react-router-dom';
 import NavBar from './NavBar';
@@ -7,6 +7,7 @@ import Login from "./Login";
 import SignUp from './SignUp';
 import Games from "./Games";
 import MeetUps from './MeetUps';
+import MeetUpForm from './MeetUpForm';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/games" >
           <Games />
+        </Route> 
+        <Route path="/meetups/new">
+          <MeetUpForm />
         </Route>
         <Route path="/meetups">
           <MeetUps />

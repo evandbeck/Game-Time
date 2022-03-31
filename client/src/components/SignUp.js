@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col, Container } from 'react-bootstrap';
+import { Form, Button, Row, Col, Container, FloatingLabel } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function SignUp({ user }) {
@@ -28,32 +28,52 @@ function SignUp({ user }) {
 
   return (
     <Container>
-      <Col>
+      <Row>
+        <Col>
         <Form onSubmit={handleSubmit}>
-          <Form.Label>Sign Up</Form.Label>
+          <h2 className="m-3">Sign Up</h2>
           <Row>
             <Form.Group>
-              <Form.Label>Email Address</Form.Label>
+              <FloatingLabel
+              controlId="emailInput"
+              label="Email address"
+              className="mb-3">
               <Form.Control required type="email" placeholder="Enter email" 
               onChange={e => setUsername(e.target.value)}/>
+              </FloatingLabel>
               <Form.Control.Feedback type="invalid" toolkit>Cannot be empty</Form.Control.Feedback>
             </Form.Group>
           </Row>
 
-          <Form.Label>Password</Form.Label>
+          <FloatingLabel
+          controlId="passwordInput"
+          label="Password"
+          className="mb-3"
+          >
           <Form.Control required type="password" placeholder="Create a password"
           onChange={e => setPassword(e.target.value)} />
+          </FloatingLabel>
           <Form.Control.Feedback type="invalid" tooltip>Cannot be empty</Form.Control.Feedback>
 
-          <Form.Label>PassWord Confirmation</Form.Label>
+          <FloatingLabel
+          controlId="passwordConfirmationInput"
+          label="Password Confirmation"
+          className="mb-3"
+          >
           <Form.Control required type="password" placeholder="Reenter password"
           onChange={e => setPasswordConfirmation} />
+          </FloatingLabel>
           <Form.Control.Feedback type="invalid" tooltip>Cannot be empty</Form.Control.Feedback>
 
           
-          <Button type="submit">Sign Up</Button>
+          <Button type="submit" className="mb-3">Sign Up</Button>
         </Form>
-      </Col>
+        </Col>
+        <Col>
+          <h1>Welcome to Game Time</h1>
+        </Col>
+      </Row>
+      
     </Container>
   )
 }

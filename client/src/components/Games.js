@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Carousel, Row } from 'react-bootstrap'
+import { Container, Carousel } from 'react-bootstrap'
 import "bootstrap/dist/css/bootstrap.min.css";
 import GameCard from './GameCard';
 
 function Games() {
     const [games, setGames] = useState([])
-    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         fetch("/games")
         .then(r => r.json())
-        .then(gamesArray => {
-            console.log(gamesArray)
-            setGames(gamesArray)
-        })
+        .then(gamesArray => setGames(gamesArray))
     }, [])
 
     const gamesList = games.map(game => {
