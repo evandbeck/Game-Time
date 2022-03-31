@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css";
 import MeetUpCard from './MeetUpCard';
 
 function MeetUps() {
@@ -12,12 +14,18 @@ function MeetUps() {
 
   const displayMeetups = meetups.map(meetup => {
       return (
-        <MeetUpCard key={meetup.id} {...meetup}/>
+        <Col className="" style={{display: 'flex', justifyContent: 'center'}}>
+          <MeetUpCard key={meetup.id} {...meetup}/>
+        </Col>
       )
     })
 
   return (
-    <div>{displayMeetups}</div>
+    <Container>
+      <Row>
+        {displayMeetups}
+      </Row>
+    </Container>
   )
 }
 

@@ -22,7 +22,7 @@ function Login({ setUser }) {
   }
 
   return (
-    <Container>
+    <Container className="rounded mb-0">
       
       <Form onSubmit={handleSubmit}>
 
