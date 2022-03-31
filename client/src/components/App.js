@@ -35,7 +35,6 @@ function App() {
         </Route>
         <Route exact path="/">
           <Home />
-          <Games />
         </Route>
       </Switch> 
     </Row>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col, Container, FloatingLabel } from 'react-bootstrap';
+import { Form, Button, Row, Col, Container, FloatingLabel, Card } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function SignUp({ user }) {
@@ -70,7 +70,16 @@ function SignUp({ user }) {
         </Form>
         </Col>
         <Col>
-          <h1>Welcome to Game Time</h1>
+          <Card border="secondary">
+            <Card.Img src="https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2020%2F0403%2Fr685935_864x1296_2%2D3.jpg&w=570&h=855&format=jpg" alt="bruce" />
+            <Card.ImgOverlay>
+              <Card.Title className="text-white" style={{ 
+                fontFamily: "Papyrus", 
+                fontSize: "40px",
+                textAlign: "right"
+                }}>It's Time!</Card.Title>
+            </Card.ImgOverlay>
+          </Card>
         </Col>
       </Row>
       

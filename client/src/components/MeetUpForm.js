@@ -6,7 +6,7 @@ function MeetUpForm() {
   const [games, setGames] = useState([])
   const [gameId, setGameId] = useState(0)
   const [time, setTime] = useState(0)
-  const [platformId, setPlatformId] = useState()
+  const [platformId, setPlatformId] = useState(0)
 
   useEffect(() => {
     fetch("/games")
