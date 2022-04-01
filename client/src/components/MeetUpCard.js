@@ -1,38 +1,46 @@
 import React, { useState } from 'react'
 import { Card, Button, Modal } from 'react-bootstrap'
 
-function MeetUpCard({ description, date, time, id }) {
+function MeetUpCard({ description, date, time, id, onDelete }) {
   const [isJoined, setIsJoined] = useState(false)
   const [meetup, setMeetup] = useState(null)
 
   function handleJoinNow(id) {
-    console.log(id)
     setIsJoined(isJoined => !isJoined)
+    // setMeetup for USERS
     fetch("/users", {
       method: "PATCH",
       headers: { 
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ meetup_id: meetup })
+      body: JSON.stringify({ meetup_id: id })
       })
     }
+
+  function deleteMeetup(id) {
+    onDelete(id)
+    fetch(`/meetups/${id}`, {
+      method: 'DELETE',
+    })
+  }
 
   return (
     <div><Card style={{ width: '18rem', height: '15rem' }}>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Card Title: {id}</Card.Title>
         <Card.Text>Date: {date}</Card.Text>
         <Card.Text>Time: {time}</Card.Text>
-        <Button variant="primary" onClick={(e) => console.log(e.target.value)}>Join Now</Button>
+        <Button className="m-2" variant="primary" onClick={() => handleJoinNow(id)}>Join Now</Button>
+        <Button className="m-2" variant="primary" onClick={() => deleteMeetup(id)}>Delete MeetUp</Button>
       </Card.Body>
     </Card>
     <Modal show={isJoined}>
-      <Modal.Header closeButton>
-        <Modal.Title>Modal Heading</Modal.Title>
+      <Modal.Header>
+        <Modal.Title>It's Game Time!</Modal.Title>
       </Modal.Header>
-      <Modal.Body>You've Joined!</Modal.Body>
+      <Modal.Body>You've joined the MeetUp for {date}. View My MeetUps for more information.</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary">Close</Button>
+        <Button variant="secondary" onClick={handleJoinNow}>Close</Button>
       </Modal.Footer>
     </Modal>
     </div>

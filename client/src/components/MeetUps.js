@@ -12,10 +12,15 @@ function MeetUps() {
       .then(meetupsArray => setMeetups(meetupsArray));
   }, []);
 
+  function onDelete(id) {
+    const filterMeetup = meetups.filter(meetup => meetup.id !== id)
+    setMeetups(filterMeetup)
+  }
+
   const displayMeetups = meetups.map(meetup => {
       return (
         <Col className="" style={{display: 'flex', justifyContent: 'center'}}>
-          <MeetUpCard key={meetup.id} {...meetup}/>
+          <MeetUpCard key={meetup.id} {...meetup} onDelete={onDelete}/>
         </Col>
       )
     })
