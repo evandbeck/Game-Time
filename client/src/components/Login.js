@@ -19,6 +19,7 @@ function Login({ setUser }) {
         r.json().then(user => setUser(user));
       }
     });
+    
   }
 
   return (

@@ -3,6 +3,8 @@ import { Form, Button, Row, Col, Container, FloatingLabel, Card } from 'react-bo
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function SignUp({ user }) {
+  const [name, setName] = useState("")
+  const [age, setAge] = useState(0)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
@@ -18,6 +20,8 @@ function SignUp({ user }) {
         username,
         password,
         password_confirmation: passwordConfirmation,
+        name,
+        age
       }),
     }).then(r => {
       if (r.ok) {
@@ -34,10 +38,30 @@ function SignUp({ user }) {
           <h2 className="m-3">Sign Up</h2>
           <Row>
             <Form.Group>
+              <FloatingLabel 
+              controlId="nameInput"
+              label="Name"
+              className="mb-2">
+                <Form.Control required type="text" placeholder="Enter name"
+                onChange={e => setName(e.target.value)}/>
+              </FloatingLabel>
+            </Form.Group>
+
+            <Form.Group>
+              <FloatingLabel
+              controlId="ageInput"
+              label="Age"
+              className="mb-2">
+                <Form.Control required placeholder="Enter age"
+                onChange={e => setAge(e.target.value)}/>
+              </FloatingLabel>
+            </Form.Group>
+
+            <Form.Group>
               <FloatingLabel
               controlId="emailInput"
               label="Email address"
-              className="mb-3">
+              className="mb-2">
               <Form.Control required type="email" placeholder="Enter email" 
               onChange={e => setUsername(e.target.value)}/>
               </FloatingLabel>
@@ -48,7 +72,7 @@ function SignUp({ user }) {
           <FloatingLabel
           controlId="passwordInput"
           label="Password"
-          className="mb-3"
+          className="mb-2"
           >
           <Form.Control required type="password" placeholder="Create a password"
           onChange={e => setPassword(e.target.value)} />
@@ -66,7 +90,7 @@ function SignUp({ user }) {
           <Form.Control.Feedback type="invalid" tooltip>Cannot be empty</Form.Control.Feedback>
 
           
-          <Button type="submit" className="mb-3">Sign Up</Button>
+          <Button type="submit" className="mb-2">Sign Up</Button>
         </Form>
         </Col>
         <Col>

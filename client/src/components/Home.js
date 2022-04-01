@@ -7,6 +7,7 @@ import GameCard from './GameCard';
 function Home() {
   const [games, setGames] = useState([])
   const [next, setNext] = useState({})
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch('/games')
