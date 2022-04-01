@@ -18,8 +18,6 @@ function Home() {
     .then(nextMeet => setNext(nextMeet[0]))
   }, [])
 
-  console.log(next.game.title)
-
   const gamesList = games.map(game => {
     return (
         <Carousel.Item>

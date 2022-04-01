@@ -1,5 +1,5 @@
 class MeetupSerializer < ActiveModel::Serializer
-  attributes :description, :date, :time
+  attributes :id, :description, :date, :time
   has_one :user
   has_one :game
 end
