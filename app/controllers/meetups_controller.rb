@@ -1,6 +1,6 @@
 class MeetupsController < ApplicationController
-    rescue_from ActiveController::RecordNotFound, with: :render_not_found_response
-    rescue_from ActiveController::RecordInvalid, with: :render_unprocessable_entity_response
+    # rescue_from ActiveController::RecordNotFound, with: :render_not_found_response
+    # rescue_from ActiveController::RecordInvalid, with: :render_unprocessable_entity_response
 
     def index
         meetups = Meetup.all.order(:time)

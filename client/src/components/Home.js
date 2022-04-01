@@ -7,6 +7,7 @@ import GameCard from './GameCard';
 function Home() {
   const [games, setGames] = useState([])
   const [next, setNext] = useState({})
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch('/games')
@@ -17,8 +18,6 @@ function Home() {
     .then(r => r.json())
     .then(nextMeet => setNext(nextMeet[0]))
   }, [])
-
-  console.log(next.game.title)
 
   const gamesList = games.map(game => {
     return (
