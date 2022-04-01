@@ -2,7 +2,8 @@ import React from 'react';
 import { Navbar, Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function  NavBar() {
+function  NavBar({ user }) {
+
   return (
     <Navbar bg="light" sticky="top">
       <Container>

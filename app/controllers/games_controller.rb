@@ -6,6 +6,11 @@ class GamesController < ApplicationController
         render json: games, status: :ok
     end
 
+    def limited
+        limited = Game.all.limit(8)
+        render json: limited, status: :ok
+    end
+
     def show
         game = Game.find(params[:id])
         render json: game, status: :ok

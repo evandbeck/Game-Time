@@ -8,7 +8,7 @@ class MeetupsController < ApplicationController
     end
 
     def limited
-        limited = Meetup.all.order(:time).limit(8)
+        limited = Meetup.all.order(:time).limit(4)
         render json: limited, status: :ok
     end
 
