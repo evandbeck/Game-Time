@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :platforms
-  resources :meetups
+  resources :meetups, only: [:index, :create, :destroy]
   resources :games, only: [:index, :show]
   resources :users, only: [:index]
   # Routing logic: fallback requests for React Router.
