@@ -20,7 +20,7 @@ function MeetUps() {
   const displayMeetups = meetups.map(meetup => {
       return (
         <Col className="" style={{display: 'flex', justifyContent: 'center'}}>
-          <MeetUpCard key={meetup.id} {...meetup} onDelete={onDelete}/>
+          <MeetUpCard key={meetup.id} meetup={meetup} handleDelete={onDelete}/>
         </Col>
       )
     })
