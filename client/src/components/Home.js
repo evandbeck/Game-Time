@@ -17,12 +17,12 @@ function Home() {
     .then(r => r.json())
     .then(gamesArray => setGames(gamesArray))
 
-    fetch('/meetups/next')
-    .then(r => r.json())
-    .then(nextMeet => {
-      setTitle(nextMeet[0].game.title)
-      setDesc(nextMeet[0].description)
-    })
+    // fetch('/meetups/next')
+    // .then(r => r.json())
+    // .then(nextMeet => {
+    //   setTitle(nextMeet[0].game.title)
+    //   setDesc(nextMeet[0].description)
+    // })
 
     fetch('/meetups/limited')
     .then(r => r.json())
